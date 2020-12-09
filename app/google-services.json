@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "187746576959",
+    "firebase_url": "https://btqm-exam-helper-default-rtdb.firebaseio.com",
+    "project_id": "btqm-exam-helper",
+    "storage_bucket": "btqm-exam-helper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187746576959:android:8b28dec60dd3ebba6ca68a",
+        "android_client_info": {
+          "package_name": "com.example.examhalperbtqm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187746576959-moc563jra5klvpn2nd92prvfi564vvr6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.examhalperbtqm",
+            "certificate_hash": "be2865d95392564d501bdea37d563766594cc5ef"
+          }
+        },
+        {
+          "client_id": "187746576959-c6ihmnqvt72qsifj6234g3h9o4ul8q6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0EUkAaTuPOuXSJvzv3Rw2X6tjl0Q81mU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187746576959-c6ihmnqvt72qsifj6234g3h9o4ul8q6t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_15sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_to"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:id="@+id/login_headline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiet_login_id"
+        android:layout_width="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="@id/login_headline"
+        app:layout_constraintTop_toBottomOf="@id/login_headline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/hint_name"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/_10sdp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiet_login_password"
+        android:layout_width="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/tiet_login_id"
+        app:layout_constraintStart_toStartOf="@id/tiet_login_id"
+        app:layout_constraintTop_toBottomOf="@id/tiet_login_id"
+        app:passwordToggleDrawable="@drawable/password_visibility_selector"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/_10sdp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/teacher_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/teachers_room"
+        android:background="@drawable/textview_click_color_change"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintTop_toBottomOf="@id/tiet_login_password"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintEnd_toStartOf="@id/admin_panel"
+        app:layout_constraintStart_toStartOf="@id/tiet_login_password"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/admin_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:padding="@dimen/_2sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/textview_click_color_change"
+        android:text="@string/admin_panel"
+        app:layout_constraintTop_toTopOf="@id/teacher_room"
+        app:layout_constraintStart_toEndOf="@id/teacher_room"
+        app:layout_constraintEnd_toEndOf="@id/tiet_login_password"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

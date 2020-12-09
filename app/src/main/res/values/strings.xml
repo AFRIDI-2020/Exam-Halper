@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ExamHalperBTQM</string>
+    <string name="login">Login</string>
+    <string name="exam_helper">Exam Helper</string>
+    <string name="btqm">BTQM</string>
+    <string name="or">or</string>
+    <string name="register">Create Account</string>
+    <string name="forget_pass">Forget password?</string>
+    <string name="click_here">Click here.</string>
+    <string name="login_to">Login To</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_password">Password</string>
+    <string name="teachers_room">Teacher\'s room</string>
+    <string name="admin_panel">Admin panel</string>
+</resources>
