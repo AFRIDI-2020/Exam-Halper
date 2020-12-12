@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/adminPasswordChange"
+        android:title="@string/change_password"/>
+
+    <item android:id="@+id/addMember"
+        android:title="@string/add_member"/>
+
+    <item android:id="@+id/notice"
+        android:title="@string/notice"/>
+
+    <item android:id="@+id/examRoutine"
+        android:title="@string/exam_routine"/>
+
+    <item android:id="@+id/logOut"
+        android:title="@string/log_out"/>
+
+</menu>

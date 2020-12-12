@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".AdminActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/app_theme_gradient"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
+        android:id="@+id/admin_activity_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:menu="@menu/admin_toolbar_menu">
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

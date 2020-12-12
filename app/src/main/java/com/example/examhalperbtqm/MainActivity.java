@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         init();
     }
 
@@ -49,13 +49,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void showLoginDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View dialogView = getLayoutInflater().inflate(R.layout.login_dialog,null);
+        View dialogView = getLayoutInflater().inflate(R.layout.login_dialog, null);
         EditText nameET = dialogView.findViewById(R.id.et_name);
         EditText passwordET = dialogView.findViewById(R.id.et_password);
         TextView teachersRoom = dialogView.findViewById(R.id.teacher_room);
         TextView adminPanel = dialogView.findViewById(R.id.admin_panel);
         builder.setView(dialogView);
-        builder.setCancelable(false);
+        builder.setCancelable(true);
         loginDialog = builder.create();
 
         adminPanel.setOnClickListener(new View.OnClickListener() {
@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String name = nameET.getText().toString();
                 String password = passwordET.getText().toString();
-                if(!name.isEmpty() && !password.isEmpty()){
-                    loginWithNamePassword(name,password);
+                if (!name.isEmpty() && !password.isEmpty()) {
+                    loginWithNamePassword(name, password);
                 }
             }
         });
@@ -75,20 +75,22 @@ public class MainActivity extends AppCompatActivity {
         adminRef.child("password").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(!dataSnapshot.exists()){
-                    if(name.equals("Admin") && password.equals("admin")){
-                        Toast.makeText(MainActivity.this, name+" "+password, Toast.LENGTH_SHORT).show();
+                if (dataSnapshot.exists()) {
+                    String existingPassword = dataSnapshot.getValue().toString();
+                    if (name.equals("Admin")) {
+                        if(password.equals(existingPassword)){
+                            goToAdminActivity();
+                        }else {
+                            Toast.makeText(MainActivity.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Incorrect name", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    if (name.equals("Admin") && password.equals("admin")) {
+                        Toast.makeText(MainActivity.this, name + " " + password, Toast.LENGTH_SHORT).show();
                         createAdminChildInDatabase(password);
                         goToAdminActivity();
-                        Log.d("TAG","dataSnapshot doesn't exist");
-                    }
-                }else {
-                    Log.d("TAG","dataSnapshot exists");
-                    String existingPassword = dataSnapshot.child("password").getValue().toString();
-                    if(password.equals(existingPassword)){
-                        goToAdminActivity();
-                    }else {
-                        Toast.makeText(MainActivity.this, "Incorrect Password!", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -106,9 +108,9 @@ public class MainActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(!task.isSuccessful()){
+                        if (!task.isSuccessful()) {
                             String error = task.getException().getMessage();
-                            Toast.makeText(MainActivity.this, "error: "+error, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "error: " + error, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -116,8 +118,16 @@ public class MainActivity extends AppCompatActivity {
 
     //to go MainActivity to AdminActivity
     private void goToAdminActivity() {
-        Intent intent = new Intent(this,AdminActivity.class);
+        Intent intent = new Intent(this, AdminActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+
+    public void createAccount(View view) {
+        goToRegisterActivity();
+    }
+
+    private void goToRegisterActivity() {
+        startActivity(new Intent(this,RegisterActivity.class));
     }
 }

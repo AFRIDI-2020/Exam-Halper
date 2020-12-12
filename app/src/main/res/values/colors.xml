@@ -10,4 +10,5 @@
     <color name="sky">#65c7f7</color>
     <color name="light_sky">#9cecfb</color>
     <color name="blue">#0052d4</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#FFFFFF</color>
 </resources>

@@ -12,4 +12,21 @@
     <string name="hint_password">Password</string>
     <string name="teachers_room">Teacher\'s room</string>
     <string name="admin_panel">Admin panel</string>
+    <string name="change_password">Change password</string>
+    <string name="add_member">Add member</string>
+    <string name="notice">Notice</string>
+    <string name="exam_routine">Exam routine</string>
+    <string name="log_out">Log out</string>
+    <string name="hint_current_password">Current password</string>
+    <string name="hint_new_password">New password</string>
+    <string name="hint_confirm_new_password">Confirm new password</string>
+    <string name="required_only_for_teachers">This is required only for the teachers of BTQM</string>
+    <string name="hint_branch">Branch</string>
+    <string name="hint_class">Class</string>
+    <string name="hint_section">Section</string>
+    <string name="hint_mobile_no">Mobile no.</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="login_here">Login here.</string>
+
 </resources>
